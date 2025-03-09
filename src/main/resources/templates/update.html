@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Update Film</title>
+  <link rel="stylesheet" href="/css/add.css">
+</head>
+<body>
+
+<div class="form-container">
+  <h1>Update the selected Film</h1>
+  <form action="/update" method="post">
+    <input type="hidden" name="filmId" th:value="${filmId}"/>
+    <input type="text" name="title" placeholder="Film Title" required>
+    <input type="number" name="releaseYear" placeholder="Film Release Year" required>
+    <input type="number" name="myRating" placeholder="Film Rating" min="0" max="10" required>
+    <button type="submit">Add Film</button>
+  </form>
+</div>
+
+<div th:if="${error}" class="error-message">
+  <p>The film could not be found, please verify the title and release year.</p>
+</div>
+
+</body>
+</html>

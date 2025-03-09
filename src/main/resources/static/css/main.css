@@ -1,0 +1,111 @@
+.film-container {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.film-container:hover {
+  transform: translateY(-5px);
+}
+
+.film-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-bottom: 20px;
+}
+
+.film-poster {
+  flex: 0 0 auto;
+  margin-right: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.film-poster img {
+  width: 180px;
+  height: 270px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.film-details h3 {
+  font-size: 30px;
+  margin: 0;
+}
+
+.film-details {
+  flex: 1;
+  text-align: left;
+}
+
+.film-details p {
+  font-size: 25px;
+  line-height: 1.5;
+  color: #333;
+  margin: 4px 0;
+}
+
+.film-details strong {
+  color: green;
+}
+
+.film-actions {
+  text-align: left;
+  margin-top: 10px;
+}
+
+.film-actions form {
+  display: inline-block;
+  margin-right: 12px;
+}
+
+.film-actions button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+.positive-button {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.positive-button:hover {
+  background-color: #45a049;
+}
+
+.delete-button {
+  background-color: #f44336;
+  color: white;
+}
+
+.delete-button:hover {
+  background-color: #e53935;
+}
+
+.main-actions {
+  text-align: left;
+  margin: 25px;
+}
+
+.main-actions form {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.main-actions button {
+  background-color: #4CAF50;
+  font-size: 30px;
+  padding: 5px 10px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.main-actions button:hover {
+  background-color: #45a049;
+}

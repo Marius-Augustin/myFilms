@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Film List</title>
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+
+<div class="main-actions">
+  <form action="/add" method="get">
+    <button type="submit">Add Film</button>
+  </form>
+
+  <form action="/sortYear" method="post">
+    <button type="submit">Sort by Year</button>
+  </form>
+
+  <form action="/sortRating" method="post">
+    <button type="submit">Sort by Rating</button>
+  </form>
+</div>
+
+<div th:each="film : ${filmArray}" class="film-container">
+  <div class="film-row">
+    <div class="film-poster">
+      <img th:src="@{${film.getPoster()}}" alt="Film Poster" />
+    </div>
+
+    <div class="film-details">
+      <h3><span th:text="${film.getTitle()}"></span> - <span th:text="${film.getYear()}"></span></h3>
+      <p><strong>Plot:</strong> <span th:text="${film.getPlot()}"></span></p>
+      <p><strong>Genre:</strong> <span th:text="${film.getGenre()}"></span></p>
+      <p><strong>Director:</strong> <span th:text="${film.getDirector()}"></span></p>
+      <p><strong>Actors:</strong> <span th:text="${film.getActors()}"></span></p>
+      <p><strong>Rating:</strong> <span th:text="${film.getRating()}"></span></p>
+    </div>
+  </div>
+
+  <div class="film-actions">
+    <form action="/update" method="get">
+      <input type="hidden" name="filmId" th:value="${film.getId()}" />
+      <button type="submit" class="positive-button">Update</button>
+    </form>
+
+    <form action="/delete" method="post">
+      <input type="hidden" name="filmId" th:value="${film.getId()}" />
+      <button type="submit" class="delete-button" onclick="return confirm('Are you sure you want to delete the Film from list?')">Delete</button>
+    </form>
+  </div>
+</div>
+
+</body>
+</html>
